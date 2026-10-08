@@ -1,0 +1,133 @@
+/**
+  Assignment 1: Dancing man
+
+  Useful resources:
+  - Using CSS animations:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Using
+  - @keyframes:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes
+  - transform-origin:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transform-origin
+  - animation-delay:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-delay
+  - transform (rotate / translate / scale):
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transforms/Using
+  - Animatable properties:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations/Animatable_properties
+  - https://cubic-bezier.com
+  - https://easings.net
+**/
+
+.head {
+  /* TODO */
+  animation-name: headJump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0.5, 1);
+  transform-origin: 100% 0;
+}
+
+@keyframes headJump {
+  from {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+.body {
+  /* TODO */
+  animation-name: bodyJump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0.5, 1);
+  transform-origin: 100% 0;
+}
+
+@keyframes bodyJump {
+  from {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+.left.hand {
+  /* TODO */
+  animation-name: leftHandjump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0.5, 1);
+  transform-origin: 100% 0;
+}
+
+@keyframes leftHandjump {
+  from {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(-40px) rotate(100deg);
+  }
+}
+
+.right.hand {
+  /* TODO */
+  animation-name: rightHandjump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0.5, 1);
+  transform-origin: 0 0;
+}
+
+@keyframes rightHandjump {
+  from {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(-40px) rotate(-100deg);
+  }
+}
+
+.left.foot {
+  /* TODO */
+  animation-name: leftFootjump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0.5, 1);
+  transform-origin: 100% 0;
+}
+
+@keyframes leftFootjump {
+  from {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(-40px) rotate(30deg);
+  }
+}
+
+.right.foot {
+  /* TODO */
+  animation-name: rightFootjump;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0.5, 1);
+  transform-origin: 0 0;
+}
+
+@keyframes rightFootjump {
+  from {
+    transform: translateY(5px);
+  }
+
+  50% {
+    transform: translateY(-40px) rotate(-30deg);
+  }
+}
