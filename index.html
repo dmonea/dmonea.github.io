@@ -1,15 +1,140 @@
-<!DOCTYPE html/>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>damian's github pages</title>
-   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Damian Monea</title>
+  <meta name="description" content="Personal blog and projects." />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+  </style>
+  <script>
+    // Apply saved theme (or OS preference) before paint.
+    const saved = localStorage.getItem('theme');
+    if (saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches)
+      document.documentElement.classList.add('dark');
+  </script>
 </head>
 
-<body>
-  <div class='container'>
-    <button><a href="animation.html">Click to see a dancing man</a></button>
+<body class="bg-white text-slate-700 antialiased dark:bg-slate-900 dark:text-slate-300">
+  <div class="mx-auto flex min-h-screen max-w-2xl flex-col px-6">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between py-8">
+      <a href="/" class="text-lg font-bold text-slate-900 dark:text-white">Damian Monea</a>
+      <nav class="flex items-center gap-5 text-sm font-medium">
+        <a href="#posts" class="hover:text-sky-600 dark:hover:text-sky-400">Blog</a>
+        <a href="#projects" class="hover:text-sky-600 dark:hover:text-sky-400">Projects</a>
+        <a href="#about" class="hover:text-sky-600 dark:hover:text-sky-400">About</a>
+        <button id="theme" aria-label="Toggle dark mode"
+          class="rounded-md border border-slate-300 px-2 py-1 hover:border-sky-500 dark:border-slate-600">
+          <span class="dark:hidden">🌙</span><span class="hidden dark:inline">☀️</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <!-- Hero -->
+      <section class="py-10">
+        <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          Hi, I'm Damian.
+        </h1>
+        <p class="mt-4 text-lg leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. I write about things I learn.
+        </p>
+        <div class="mt-6 flex gap-3">
+          <a href="#posts"
+            class="rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700">Read the blog</a>
+          <a href="#" class="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold hover:border-sky-500 dark:border-slate-600">GitHub</a>
+          <a href="#" class="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold hover:border-sky-500 dark:border-slate-600">Email</a>
+        </div>
+      </section>
+
+      <!-- Posts -->
+      <section id="posts" class="py-10">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Latest posts</h2>
+        <ul class="mt-6 divide-y divide-slate-200 dark:divide-slate-700">
+          <li class="py-5">
+            <a href="#" class="group block">
+              <time class="text-sm text-slate-500">October 8, 2026</time>
+              <h3 class="mt-1 text-xl font-semibold text-slate-900 group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">Lorem ipsum dolor sit amet</h3>
+              <p class="mt-1">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </a>
+          </li>
+          <li class="py-5">
+            <a href="#" class="group block">
+              <time class="text-sm text-slate-500">September 21, 2026</time>
+              <h3 class="mt-1 text-xl font-semibold text-slate-900 group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">Ut enim ad minim veniam</h3>
+              <p class="mt-1">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li class="py-5">
+            <a href="#" class="group block">
+              <time class="text-sm text-slate-500">August 30, 2026</time>
+              <h3 class="mt-1 text-xl font-semibold text-slate-900 group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400">Duis aute irure dolor</h3>
+              <p class="mt-1">In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="mt-4 inline-block text-sm font-semibold text-sky-600 hover:underline dark:text-sky-400">All posts →</a>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="py-10">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Projects</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+          <a href="animation.html"
+            class="rounded-lg border border-slate-200 p-4 hover:border-sky-500 dark:border-slate-700">
+            <h3 class="font-semibold text-slate-900 dark:text-white">Dancing man</h3>
+            <p class="mt-1 text-sm">A little CSS animation. Click to see it dance.</p>
+          </a>
+          <a href="#" class="rounded-lg border border-slate-200 p-4 hover:border-sky-500 dark:border-slate-700">
+            <h3 class="font-semibold text-slate-900 dark:text-white">Project name</h3>
+            <p class="mt-1 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-10">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">About</h2>
+        <p class="mt-4 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="my-10 rounded-lg bg-slate-100 p-6 dark:bg-slate-800">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white">Subscribe</h2>
+        <p class="mt-1 text-sm">Get new posts in your inbox. No spam.</p>
+        <form class="mt-4 flex gap-2" onsubmit="return false">
+          <input type="email" placeholder="you@example.com" required
+            class="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-900" />
+          <button class="rounded-md bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700">Subscribe</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex justify-between border-t border-slate-200 py-6 text-sm text-slate-500 dark:border-slate-700">
+      <span>© 2026 Damian Monea</span>
+      <span class="flex gap-4">
+        <a href="#" class="hover:text-sky-600">GitHub</a>
+        <a href="#" class="hover:text-sky-600">RSS</a>
+      </span>
+    </footer>
   </div>
+
+  <script>
+    document.getElementById('theme').onclick = () => {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    };
+  </script>
 </body>
 
 </html>
